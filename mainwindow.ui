@@ -6,154 +6,254 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>860</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>XOR File Processor</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>70</y>
-      <width>621</width>
-      <height>401</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="4" column="1">
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="text">
-        <string>Да</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="0">
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string>Значение для модификации</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="1" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_perem"/>
-     </item>
-     <item row="2" column="1" colspan="2">
-      <widget class="QLineEdit" name="lineEdit"/>
-     </item>
-     <item row="8" column="1" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_3"/>
-     </item>
-     <item row="6" column="1">
-      <widget class="QRadioButton" name="radioButton_3">
-       <property name="text">
-        <string>Перезапись</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>Периодичность работы таймера(в секундах)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Действия при повторении имени выходного файла</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QRadioButton" name="radioButton_5">
-       <property name="text">
-        <string>Разовый запуск</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="3">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Выбор файла для модификации</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Путь для сохранения файлов</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Маска файла</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Удалять ли входные файлы?</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_save"/>
-     </item>
-     <item row="6" column="2">
-      <widget class="QRadioButton" name="radioButton_4">
-       <property name="text">
-        <string>Модификация имени</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="2">
-      <widget class="QRadioButton" name="radioButton_6">
-       <property name="text">
-        <string>Таймер</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>Режим работы</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="2">
-      <widget class="QRadioButton" name="radioButton">
-       <property name="text">
-        <string>Нет</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0" colspan="3">
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>Начать работу программы(при разовом использовании)</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="settingsLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="inputDirLabel">
+        <property name="text">
+         <string>Папка поиска файлов</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="inputDirEdit"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="browseInputButton">
+        <property name="text">
+         <string>Выбрать...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="maskLabel">
+        <property name="text">
+         <string>Маска входных файлов</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QLineEdit" name="maskEdit">
+        <property name="placeholderText">
+         <string>*.txt; *.bin; testFile.bin</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="outputDirLabel">
+        <property name="text">
+         <string>Папка результата</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="outputDirEdit"/>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="browseOutputButton">
+        <property name="text">
+         <string>Выбрать...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="deleteInputLabel">
+        <property name="text">
+         <string>Удалять входные файлы</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2">
+       <widget class="QCheckBox" name="deleteInputCheck">
+        <property name="text">
+         <string>Удалять после успешной обработки</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="conflictLabel">
+        <property name="text">
+         <string>Если имя результата уже есть</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QRadioButton" name="overwriteRadio">
+        <property name="text">
+         <string>Перезаписать</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QRadioButton" name="renameRadio">
+        <property name="text">
+         <string>Добавить счетчик</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="modeLabel">
+        <property name="text">
+         <string>Режим работы</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QRadioButton" name="onceRadio">
+        <property name="text">
+         <string>Разовый запуск</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QRadioButton" name="timerRadio">
+        <property name="text">
+         <string>По таймеру</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="intervalLabel">
+        <property name="text">
+         <string>Период опроса, сек</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1" colspan="2">
+       <widget class="QSpinBox" name="intervalSpinBox"/>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="hexKeyLabel">
+        <property name="text">
+         <string>XOR-значение, 8 байт hex</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1" colspan="2">
+       <widget class="QLineEdit" name="hexKeyEdit">
+        <property name="maxLength">
+         <number>18</number>
+        </property>
+        <property name="placeholderText">
+         <string>1234567890ABCDEF</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="buttonsLayout">
+      <item>
+       <widget class="QPushButton" name="startButton">
+        <property name="text">
+         <string>Старт</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pauseButton">
+        <property name="text">
+         <string>Пауза</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopButton">
+        <property name="text">
+         <string>Остановить</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="progressLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="currentFileTitleLabel">
+        <property name="text">
+         <string>Текущий файл</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="currentFileLabel">
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="fileProgressLabel">
+        <property name="text">
+         <string>Прогресс файла</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QProgressBar" name="fileProgressBar">
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="totalProgressLabel">
+        <property name="text">
+         <string>Общий прогресс</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QProgressBar" name="totalProgressBar">
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="statusTitleLabel">
+        <property name="text">
+         <string>Статус</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="statusLabel">
+        <property name="text">
+         <string>Готово</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
+  <widget class="QMenuBar" name="menubar"/>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>

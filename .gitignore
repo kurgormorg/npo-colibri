@@ -1,0 +1,10 @@
+.qmake.stash
+Makefile
+Makefile.Debug
+Makefile.Release
+debug/
+release/
+ui_*.h
+*.o
+*.obj
+*.exe
